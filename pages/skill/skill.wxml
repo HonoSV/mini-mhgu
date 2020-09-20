@@ -1,0 +1,33 @@
+<!--skill/skill.wxml-->
+<view class="rowView sbEx">
+  <view class="sbBar">
+        <mp-searchbar id="searchBar" bindclear="clearSearch" bindinput="bindInput" placeholder="" cancel="{{cancel}}"></mp-searchbar>
+  </view>
+  <view class="sbBt">
+    <button size="mini" bindtap="search" type="primary">搜索</button>
+  </view>
+</view>
+
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th1">技能</view>
+    <!-- <view class="th">技能系统</view> -->
+    <view class="th2">描述</view>
+  </view>
+  <block wx:for="{{listData}}" wx:key="code">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td1" data-name="{{item.skillSystemName}}" data-point="{{item.point}}" bindtap="openDialog">{{item.skillName}}</view>
+      <!-- <view class="td">{{item.skillSystemName}}</view> -->
+      <view class="td2" data-name="{{item.skillSystemName}}" data-point="{{item.point}}" bindtap="openDialog">{{item.description}}</view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td1" data-name="{{item.skillSystemName}}" data-point="{{item.point}}" bindtap="openDialog">{{item.skillName}}</view>
+      <!-- <view class="td">{{item.skillSystemName}}</view> -->
+      <view class="td2" data-name="{{item.skillSystemName}}" data-point="{{item.point}}" bindtap="openDialog">{{item.description}}</view>
+    </view>
+  </block>
+</view>
+
+<mp-dialog title="技能系统" show="{{flag}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+    <view>{{skillText}}</view>
+</mp-dialog>

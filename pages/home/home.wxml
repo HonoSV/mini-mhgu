@@ -1,0 +1,36 @@
+<!--home/home.wxml-->
+<template name="picButton">
+  <button size="mini" id="{{realName}}" class="homeButton" bindtap="nextPage">
+    <view class="rowView">
+      <view><image src="{{pic}}" class="homeIcon"></image></view>
+      <view class="buttonName">{{name}}</view>
+    </view>
+  </button>
+</template>
+
+<view class="container">
+  <view class="title">
+    怪物猎人GU/XX助手
+  </view>
+  <view>
+    <view class="rowView buttonView">
+      <template is="picButton" data="{{...monster}}"></template>
+      <template is="picButton" data="{{...task}}"></template>
+      <template is="picButton" data="{{...medal}}"></template>
+    </view>
+    <view class="rowView buttonView">
+      <template is="picButton" data="{{...skill}}"></template>
+      <template is="picButton" data="{{...map}}"></template>
+      <template is="picButton" data="{{...decorations}}"></template>
+    </view>
+    <view class="rowView buttonView">
+      <template is="picButton" data="{{...competitive}}"></template>
+      <template is="picButton" data="{{...synthesis}}"></template>
+      <template is="picButton" data="{{...about}}"></template>
+    </view>
+  </view>
+  <view>
+    <image src="../static/pic/buttonIcon/adv.png"></image>
+  </view>
+</view>
+

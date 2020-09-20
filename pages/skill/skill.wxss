@@ -1,0 +1,70 @@
+/* skill/skill.wxss */
+.table {
+  border: 0px solid darkgray;
+ }
+ .tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+ }
+ .td {
+  width:50%;
+  justify-content: center;
+  text-align: center;
+  font-size: xx-small;
+ }
+ .bg-w{
+  background: snow;
+  height: 1.5rem;
+ }
+ .bg-g{
+  background: #E6F3F9;
+ }
+ .th {
+  width: 50%;
+  justify-content: center;
+  background: #33ffcc;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+ }
+ .td1 {
+  width:30%;
+  justify-content: center;
+  text-align: center;
+  font-size: xx-small;
+  margin-left: 10px;
+ }
+
+ .td2 {
+  width:70%;
+  justify-content: center;
+  text-align: center;
+  font-size: xx-small;
+  margin-right: 10px;
+ }
+
+ .th1 {
+  width: 30%;
+  justify-content: center;
+  background: #33c5ff;
+  color: #fff;
+  display: flex;
+  height: 1.5rem;
+  align-items: center;
+
+ }
+
+ .th2 {
+  width: 70%;
+  justify-content: center;
+  background: #33c5ff;
+  color: #fff;
+  display: flex;
+  height: 1.5rem;
+  align-items: center;
+
+ }

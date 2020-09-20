@@ -1,0 +1,25 @@
+/* home/home.wxss */
+.homeIcon {
+  margin-top: 10px;
+  width: 26px;
+  height: 26px;
+}
+
+.homeButton {
+  margin-right: 15px;
+  margin-left: 10px;
+}
+
+.buttonName {
+  margin-top: 8px;
+  font-weight:bold;
+}
+
+.buttonView {
+  margin-bottom: 20px;
+}
+
+.title {
+  margin-bottom: 50px;
+  font-weight:bold;
+}
