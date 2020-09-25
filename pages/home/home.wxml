@@ -30,7 +30,7 @@
     </view>
   </view>
   <view>
-    <image src="../static/pic/buttonIcon/adv.png"></image>
+    <image mode="widthFix" src="../static/pic/buttonIcon/adv.png"></image>
   </view>
 </view>
 

@@ -35,6 +35,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    serverURL: 'http://192.168.0.116:8080',
+    serverURL: 'http://192.168.0.116',
+    picSuffix: '.png',
   }
 })

@@ -1,0 +1,15 @@
+<!--pages/map/map.wxml-->
+<view class="container">
+  <view class="picView">
+    <image mode="widthFix" src="{{picSrc}}"></image>
+  </view>
+
+  <view class="btView">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <button class="picBt" style="width: 600rpx;" >
+        地图选择：{{array[index]}}
+      </button>
+    </picker>
+  </view>
+  
+</view>

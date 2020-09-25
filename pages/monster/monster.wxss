@@ -1,0 +1,6 @@
+/* pages/monster/monster.wxss */
+
+.picStyle {
+  width: 100rpx;
+  height: 100rpx;
+}

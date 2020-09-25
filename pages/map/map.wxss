@@ -1,0 +1,21 @@
+/* pages/map/map.wxss */
+
+.picView {
+  display: flex;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.btView {
+  display: flex;
+  margin: 20rpx;
+  width: 600rpx;
+  justify-content: center;
+}
+
+.picBt {
+  display: flex;
+  width: 600rpx;
+  justify-content: center;
+  flex-wrap: nowrap;
+}

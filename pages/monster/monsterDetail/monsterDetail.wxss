@@ -1,0 +1,16 @@
+/* pages/monster/monsterDetail/monsterDetail.wxss */
+
+.all {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+}
+
+.picView {
+  display: flex;
+}

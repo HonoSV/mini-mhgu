@@ -1,0 +1,23 @@
+<!--pages/monster/monster.wxml-->
+
+  <view class="rowView sbEx">
+    <view class="sbBar">
+          <mp-searchbar id="searchBar" bindclear="clearSearch" bindinput="bindInput" placeholder="" cancel="{{cancel}}"></mp-searchbar>
+    </view>
+    <view class="sbBt">
+      <button size="mini" bindtap="search" type="primary">搜索</button>
+    </view>
+  </view>
+
+  <view class='grid-item-container'>
+    <block wx:for="{{monsterList}}" wx:key="index">
+      <view class='grid-item-child'>
+        <view data-fleshy="{{item.fleshy}}" data-anti="{{item.anti}}" data-name="{{item.monsterName}}" bindtap="checkDetail">
+          <!-- <icon class='grid-item-icon' type='{{item.type}}' size='{{item.size}}' color='{{item.color}}'/> -->
+          <view class='grid-item-icon'><image src="{{item.icon}}" class='picStyle' /></view>
+          <text class='grid-item-label'>{{item.monsterName}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+

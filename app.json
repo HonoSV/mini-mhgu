@@ -4,12 +4,15 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/skill/skill",
-    "pages/medal/medal"
+    "pages/medal/medal",
+    "pages/map/map",
+    "pages/monster/monster",
+    "pages/monster/monsterDetail/monsterDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "MHGU",
+    "navigationBarTitleText": "MHGU助手",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",

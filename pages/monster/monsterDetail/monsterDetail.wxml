@@ -1,0 +1,16 @@
+<!--pages/monster/monsterDetail/monsterDetail.wxml-->
+<view class="all">
+
+  <view class="title">
+    <text>{{name}}</text>
+  </view>
+
+  <view class="picView">
+    <image mode="widthFix" src="{{fleshy}}"/>
+  </view>
+
+  <view class="picView">
+    <image mode="widthFix" src="{{anti}}"/>
+  </view>
+
+</view>
