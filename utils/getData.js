@@ -61,9 +61,26 @@ const getMonster = (that, first, monsterName) => {
   })
 }
 
+const getDecorations = (that, first, val) => {
+  if(!val)
+    val=''
+  wx.request({
+    url: URL + '/decorations',
+    data: {
+      name: val
+    },
+    success(res) {
+      that.setData({listData: res.data})
+      if(first)
+        that.setData({cacheData: res.data})
+    }
+  })
+}
+
 module.exports = {
   getSkill: getSkill,
   getMapName: getMapName,
   getMapPic: getMapPic,
   getMonster: getMonster,
+  getDecorations: getDecorations,
 }

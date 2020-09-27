@@ -50,6 +50,11 @@ Page({
       name: "关于",
       realName:'about',
     },
+    melody: {
+      pic: "../static/pic/buttonIcon/melody.png",
+      name: "旋律",
+      realName:'melody',
+    },
   },
 
   nextPage: function(event) {

@@ -4,10 +4,10 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/skill/skill",
-    "pages/medal/medal",
     "pages/map/map",
     "pages/monster/monster",
-    "pages/monster/monsterDetail/monsterDetail"
+    "pages/monster/monsterDetail/monsterDetail",
+    "pages/decorations/decorations"
   ],
   "window": {
     "backgroundTextStyle": "light",

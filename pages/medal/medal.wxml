@@ -1,5 +1,0 @@
-<!--pages/medal/medal.wxml-->
-<text>pages/medal/medal.wxml</text>
-<view>
-  <image src="{{pic}}"></image>
-</view>

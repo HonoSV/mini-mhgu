@@ -1,18 +1,47 @@
-// pages/medal/medal.js
+// pages/decorations/decorations.js
+const getData = require("../../utils/getData")
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    listData: [],
+    flag: false,
+    oneButton: [{text: "确认"}],
+    skillText: '',
+    cacheData: [],
+    searchText: '',
+  },
 
+  openDialog: function(event) {
+    let str = event.currentTarget.dataset.did
+    this.setData({flag: true, skillText: str})
+  },
+  tapDialogButton(e) {
+    this.setData({
+      flag: false
+    })
+  },
+  search: function() {
+    getData.getSkill(this, false, this.data.searchText)
+  },
+  clearSearch: function(e) {
+    this.setData({listData: this.data.cacheData, searchText: ''})
+  },
+  bindInput: function(e) {
+    let val =  e.detail.value
+    console.log(val)
+    this.setData({searchText: val})
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this
+    getData.getDecorations(that, true)
   },
 
   /**

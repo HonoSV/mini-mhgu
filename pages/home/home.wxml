@@ -16,7 +16,7 @@
     <view class="rowView buttonView">
       <template is="picButton" data="{{...monster}}"></template>
       <template is="picButton" data="{{...task}}"></template>
-      <template is="picButton" data="{{...medal}}"></template>
+      <template is="picButton" data="{{...melody}}"></template>
     </view>
     <view class="rowView buttonView">
       <template is="picButton" data="{{...skill}}"></template>
