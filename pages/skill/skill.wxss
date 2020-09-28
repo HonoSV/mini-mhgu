@@ -55,7 +55,6 @@
   display: flex;
   height: 1.5rem;
   align-items: center;
-
  }
 
  .th2 {
@@ -66,5 +65,8 @@
   display: flex;
   height: 1.5rem;
   align-items: center;
+ }
 
+ .skillAbout {
+   margin-top: 50rpx;
  }

@@ -31,6 +31,8 @@
   </block>
 </view>
 
-<mp-dialog title="技能系统" show="{{flag}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
-    <view>{{skillText}}</view>
+<mp-dialog title="生产道具" show="{{flag}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+  <view wx:for="{{materialList}}">
+    <view>{{item}}</view>
+  </view>
 </mp-dialog>

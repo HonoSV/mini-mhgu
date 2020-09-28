@@ -11,14 +11,15 @@ Page({
     flag: false,
     oneButton: [{text: "确认"}],
     skillText: '',
-    cacheData: [],
     searchText: '',
+    aboutList: [],
   },
   openDialog: function(event) {
     let skillSystemName = event.currentTarget.dataset.name
     let point = event.currentTarget.dataset.point
     let str = skillSystemName + " : " + point
-    this.setData({flag: true, skillText: str})
+    this.setData({skillText: str})
+    getData.getSkillAbout(this, skillSystemName)
   },
   tapDialogButton(e) {
     this.setData({
@@ -29,21 +30,25 @@ Page({
     getData.getSkill(this, false, this.data.searchText)
   },
   clearSearch: function(e) {
-    this.setData({listData: this.data.cacheData, searchText: ''})
+    let data = wx.getStorageSync('skill')
+    this.setData({listData: data, searchText: ''})
   },
   // cancel: function() {
   //   this.setData({listData: this.data.cacheData, searchText: ''})
   // },
   bindInput: function(e) {
     let val =  e.detail.value
-    console.log(val)
     this.setData({searchText: val})
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    getData.getSkill(this, true)
+    let data = wx.getStorageSync('skill')
+    if (data)
+      this.setData({listData: data})
+    else
+      getData.getSkill(this, true)
     // let that = this, sb = this.selectComponent("#searchBar"), {hideInput} = sb
     // Object.defineProperties(sb.__proto__, {
     //   hideInput: {

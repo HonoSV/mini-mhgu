@@ -6,8 +6,8 @@
 }
 
 .homeButton {
-  margin-right: 15rpx;
-  margin-left: 10rpx;
+  margin-right: 25rpx;
+  margin-left: 20rpx;
 }
 
 .buttonName {

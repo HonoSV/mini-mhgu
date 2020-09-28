@@ -8,18 +8,17 @@ Page({
   data: {
     monsterList: [],
     searchText: '',
-    cacheData: []
   },
   bindInput: function(e) {
     let val =  e.detail.value
-    console.log(val)
     this.setData({searchText: val})
   },
   search: function() {
     getData.getMonster(this, false, this.data.searchText)
   },
   clearSearch: function(e) {
-    this.setData({monsterList: this.data.cacheData, searchText: ''})
+    let data = wx.getStorageSync('monster')
+    this.setData({monsterList: data, searchText: ''})
   },
 
   checkDetail: function(e) {
@@ -34,8 +33,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this
-    getData.getMonster(that, true)
+    let data = wx.getStorageSync('monster')
+    if (data)
+      this.setData({monsterList: data})
+    else
+      getData.getMonster(this, true)
   },
 
   /**

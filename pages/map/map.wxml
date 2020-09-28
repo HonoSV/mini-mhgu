@@ -5,9 +5,9 @@
   </view>
 
   <view class="btView">
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" range-key="mapName">
       <button class="picBt" style="width: 600rpx;" >
-        地图选择：{{array[index]}}
+        地图选择：{{array[index].mapName}}
       </button>
     </picker>
   </view>

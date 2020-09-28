@@ -13,32 +13,45 @@ const getSkill = (that, first, val) => {
     success(res) {
       that.setData({listData: res.data})
       if(first)
-        that.setData({cacheData: res.data})
+        wx.setStorageSync('skill', res.data)
     }
   })
 }
 
-const getMapName = (that) => {
+const getMap = (that) => {
   wx.request({
-    url: URL + '/mapName',
+    url: URL + '/gameMap',
     success(res) {
-      that.setData({array: res.data})
-      getMapPic(that)
+      res.data.forEach((val,index,array) => {
+        val.picName = URL+'/'+val.picName
+      })
+      that.setData({array: res.data, picSrc: res.data[0].picName})
+      wx.setStorageSync('map', res.data)
     }
   })
 }
 
-const getMapPic = (that) => {
-  wx.request({
-    url: URL + '/picName',
-    data: {
-      name: that.data.array[that.data.index]
-    },
-    success(res) {
-      that.setData({picSrc: URL+'/'+res.data})
-    }
-  })
-}
+// const getMapName = (that) => {
+//   wx.request({
+//     url: URL + '/mapName',
+//     success(res) {
+//       that.setData({array: res.data})
+//       getMapPic(that)
+//     }
+//   })
+// }
+
+// const getMapPic = (that) => {
+//   wx.request({
+//     url: URL + '/picName',
+//     data: {
+//       name: that.data.array[that.data.index]
+//     },
+//     success(res) {
+//       that.setData({picSrc: URL+'/'+res.data})
+//     }
+//   })
+// }
 
 const getMonster = (that, first, monsterName) => {
   if(!monsterName)
@@ -56,7 +69,7 @@ const getMonster = (that, first, monsterName) => {
       })
       that.setData({monsterList: res.data})
       if(first)
-        that.setData({cacheData: res.data})
+        wx.setStorageSync('monster', res.data)
     }
   })
 }
@@ -72,15 +85,49 @@ const getDecorations = (that, first, val) => {
     success(res) {
       that.setData({listData: res.data})
       if(first)
-        that.setData({cacheData: res.data})
+        wx.setStorageSync('decorations', res.data)
+    }
+  })
+}
+
+const getDecorationsMaterial = (that, val) => {
+  wx.request({
+    url: URL + '/decorationsMaterial',
+    data: {
+      id: val
+    },
+    success(res) {
+      let list = []
+      for (let i of res.data) {
+        let str = i.material + " : " + i.num 
+        list.push(str)
+      }
+      that.setData({materialList: list, flag: true})
+    }
+  })
+}
+
+const getSkillAbout = (that, val) => {
+  wx.request({
+    url: URL + '/aboutDecorations',
+    data: {
+      name: val
+    },
+    success(res) {
+      let list = []
+      for (let x of res.data) {
+        list.push(x.decorationsName)
+      }
+      that.setData({aboutList: list, flag: true})
     }
   })
 }
 
 module.exports = {
   getSkill: getSkill,
-  getMapName: getMapName,
-  getMapPic: getMapPic,
+  getMap: getMap,
   getMonster: getMonster,
   getDecorations: getDecorations,
+  getDecorationsMaterial: getDecorationsMaterial,
+  getSkillAbout: getSkillAbout,
 }

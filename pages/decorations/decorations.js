@@ -10,14 +10,13 @@ Page({
     listData: [],
     flag: false,
     oneButton: [{text: "确认"}],
-    skillText: '',
-    cacheData: [],
+    materialList: '',
     searchText: '',
   },
 
   openDialog: function(event) {
-    let str = event.currentTarget.dataset.did
-    this.setData({flag: true, skillText: str})
+    let did = event.currentTarget.dataset.did
+    getData.getDecorationsMaterial(this, did)
   },
   tapDialogButton(e) {
     this.setData({
@@ -25,14 +24,14 @@ Page({
     })
   },
   search: function() {
-    getData.getSkill(this, false, this.data.searchText)
+    getData.getDecorations(this, false, this.data.searchText)
   },
   clearSearch: function(e) {
-    this.setData({listData: this.data.cacheData, searchText: ''})
+    let data = wx.getStorageSync('decorations')
+    this.setData({listData: data, searchText: ''})
   },
   bindInput: function(e) {
     let val =  e.detail.value
-    console.log(val)
     this.setData({searchText: val})
   },
 
@@ -40,8 +39,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this
-    getData.getDecorations(that, true)
+    let data = wx.getStorageSync('decorations')
+    if (data)
+      this.setData({listData: data})
+    else
+      getData.getDecorations(this, true)
   },
 
   /**

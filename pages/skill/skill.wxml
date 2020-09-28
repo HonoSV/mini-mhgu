@@ -30,4 +30,9 @@
 
 <mp-dialog title="技能系统" show="{{flag}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
     <view>{{skillText}}</view>
+   
+    <view class="skillAbout">相关饰品：</view>
+    <view wx:for="{{aboutList}}">
+      <view>{{item}}</view>
+    </view>
 </mp-dialog>

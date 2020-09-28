@@ -11,16 +11,18 @@ Page({
     picSrc: '',
   },
   bindPickerChange: function(e) {
-    this.setData({index: e.detail.value})
-    let that = this
-    getData.getMapPic(that)
+    let num = e.detail.value
+    this.setData({index: e.detail.value, picSrc: this.data.array[num].picName})
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this
-    getData.getMapName(that)
+    let data = wx.getStorageSync('map')
+    if (data)
+      this.setData({array: data, picSrc: data[0].picName})
+    else
+      getData.getMap(this)
   },
 
   /**
