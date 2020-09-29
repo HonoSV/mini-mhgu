@@ -7,7 +7,8 @@
     "pages/map/map",
     "pages/monster/monster",
     "pages/monster/monsterDetail/monsterDetail",
-    "pages/decorations/decorations"
+    "pages/decorations/decorations",
+    "pages/synthesis/synthesis"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -123,11 +123,28 @@ const getSkillAbout = (that, val) => {
   })
 }
 
+const getSynthesis = (that, first, val) => {
+  if(!val)
+    val = ''
+  wx.request({
+    url: URL + '/synthesis',
+    data: {
+      name: val,
+    },
+    success(res) {
+      that.setData({listData: res.data})
+      if(first)
+        wx.setStorageSync('synthesis', res.data)
+    }
+  })
+}
+
 module.exports = {
   getSkill: getSkill,
   getMap: getMap,
   getMonster: getMonster,
   getDecorations: getDecorations,
   getDecorationsMaterial: getDecorationsMaterial,
+  getSynthesis: getSynthesis,
   getSkillAbout: getSkillAbout,
 }
