@@ -8,7 +8,8 @@
     "pages/monster/monster",
     "pages/monster/monsterDetail/monsterDetail",
     "pages/decorations/decorations",
-    "pages/synthesis/synthesis"
+    "pages/synthesis/synthesis",
+    "pages/competitive/competitive"
   ],
   "window": {
     "backgroundTextStyle": "light",

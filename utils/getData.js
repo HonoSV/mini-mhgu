@@ -139,6 +139,40 @@ const getSynthesis = (that, first, val) => {
   })
 }
 
+const getCompetitive = (that, first) => {
+  wx.request({
+    url: URL + '/competitive',
+    success(res) {
+      that.setData({listData: res.data})
+      if(first)
+        wx.setStorageSync('competitive', res.data)
+    }
+  })
+}
+
+const getCompetitiveReward = (that, cid, mids) => {
+  wx.request({
+    url: URL+'/competitiveReward',
+    data: {
+      id: cid,
+      ids: mids,
+    },
+    success(res) {
+      let pic = []
+      let rwd = []
+      res.data.monsterPic.forEach((val, index, arr) => {
+        let picStr = URL + "/" + val.icon + picSuffix
+        pic.push(picStr)
+      })
+      res.data.rewards.forEach((val, index, arr) => {
+        let rwdStr = val.reward + " " + val.num + "个" + " " + val.rate
+        rwd.push(rwdStr)
+      })
+      that.setData({monsterPic: pic, reward: rwd, flag: true})
+    }
+  })
+}
+
 module.exports = {
   getSkill: getSkill,
   getMap: getMap,
@@ -147,4 +181,6 @@ module.exports = {
   getDecorationsMaterial: getDecorationsMaterial,
   getSynthesis: getSynthesis,
   getSkillAbout: getSkillAbout,
+  getCompetitive: getCompetitive,
+  getCompetitiveReward: getCompetitiveReward,
 }

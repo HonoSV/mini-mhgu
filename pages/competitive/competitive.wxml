@@ -1,0 +1,29 @@
+<!--pages/competitive/competitive.wxml-->
+<view class="page">
+    <view class="table">
+        <view class="tr title">
+            <view class="thM">任务</view>
+            <view class="th">S</view>
+            <view class="th">A</view>
+            <view class="th">B</view>
+        </view>
+        <view class="tr" wx:for="{{listData}}" data-cid="{{item.id}}" data-ids="{{item.monsterIds}}" bindtap="openDialog">
+            <view class="tdM">{{item.taskName}}</view>
+            <view class="td">{{item.sTime}}</view>
+            <view class="td">{{item.aTime}}</view>
+            <view class="td">{{item.bTime}}</view>
+        </view>
+    </view>
+</view>
+
+<mp-dialog title="怪物与奖励" show="{{flag}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+  <view>
+    <view class="picEx" >
+        <image class="pic" wx:for="{{monsterPic}}" src="{{item}}" mode="widthFix"/>
+    </view>
+
+    <view wx:for="{{reward}}">
+        <view>{{item}}</view>
+    </view>
+  </view>
+</mp-dialog>

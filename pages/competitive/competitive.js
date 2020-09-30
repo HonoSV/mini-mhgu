@@ -1,6 +1,5 @@
-// pages/synthesis/synthesis.js
+// pages/competitive/competitive.js
 const getData = require("../../utils/getData")
-
 Page({
 
   /**
@@ -10,42 +9,29 @@ Page({
     listData: [],
     flag: false,
     oneButton: [{text: "确认"}],
-    rate: '',
-    num: '',
-    searchText: '',
+    monsterPic: [],
+    reward: [],
   },
   openDialog: function(event) {
-    let rateStr = '成功概率： '
-    let numStr = '调和数量： '
-    rateStr += event.currentTarget.dataset.rate
-    numStr += event.currentTarget.dataset.num
-    this.setData({rate: rateStr, num: numStr, flag: true})
+    let cid = event.currentTarget.dataset.cid
+    let ids = event.currentTarget.dataset.ids
+    getData.getCompetitiveReward(this, cid, ids)
   },
   tapDialogButton(e) {
     this.setData({
       flag: false
     })
   },
-  search: function() {
-    getData.getSynthesis(this, false, this.data.searchText)
-  },
-  clearSearch: function(e) {
-    let data = wx.getStorageSync('synthesis')
-    this.setData({listData: data, searchText: ''})
-  },
-  bindInput: function(e) {
-    let val =  e.detail.value
-    this.setData({searchText: val})
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let data = wx.getStorageSync('synthesis')
-    if (data)
+    let data = wx.getStorageSync('competitive')
+    if(data)
       this.setData({listData: data})
     else
-      getData.getSynthesis(this, true)
+      getData.getCompetitive(this, true)
   },
 
   /**

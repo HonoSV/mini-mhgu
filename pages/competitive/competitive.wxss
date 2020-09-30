@@ -1,0 +1,58 @@
+/* pages/competitive/competitive.wxss */
+.page {
+    display: flex;
+    justify-content: center;
+}
+
+.table {
+  border: 1px solid #dadada;
+  border-right: 0;
+  border-bottom: 0;
+  width: 98%;
+}
+
+.tr {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.th,.td {
+  padding: 10px;
+  border-bottom: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+  text-align: center;
+  width: 15%;
+  font-size: small;
+}
+
+.thM,.tdM {
+  padding: 10px;
+  border-bottom: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+  text-align: center;
+  width: 55%;
+  font-size: small;
+}
+
+.th,.thM {
+  font-weight: 400;
+  background-color: #dadada;
+}
+
+.title {
+  position: sticky;
+  top: 0px;
+}
+
+.picEx {
+  margin: 10rpx auto;
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+}
+.pic{
+  width: 80rpx;
+  height: 80rpx;
+}
+
