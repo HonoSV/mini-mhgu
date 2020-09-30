@@ -55,4 +55,7 @@
   width: 80rpx;
   height: 80rpx;
 }
-
+.catPic {
+  width: 30rpx;
+  height: 30rpx;
+}

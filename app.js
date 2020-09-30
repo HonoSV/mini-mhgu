@@ -35,7 +35,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    serverURL: 'http://172.20.10.8',
+    serverURL: 'http://192.168.0.116',
     picSuffix: '.png',
   }
 })

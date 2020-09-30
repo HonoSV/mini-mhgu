@@ -9,7 +9,8 @@
     "pages/monster/monsterDetail/monsterDetail",
     "pages/decorations/decorations",
     "pages/synthesis/synthesis",
-    "pages/competitive/competitive"
+    "pages/competitive/competitive",
+    "pages/melody/melody"
   ],
   "window": {
     "backgroundTextStyle": "light",

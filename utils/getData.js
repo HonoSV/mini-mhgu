@@ -115,6 +115,8 @@ const getSkillAbout = (that, val) => {
     },
     success(res) {
       let list = []
+      if(res.data.length === 0)
+        list.push('无')
       for (let x of res.data) {
         list.push(x.decorationsName)
       }
@@ -173,6 +175,29 @@ const getCompetitiveReward = (that, cid, mids) => {
   })
 }
 
+const getMelody = (that, first) => {
+  wx.request({
+    url: URL + '/melody',
+    success(res) {
+      res.data.forEach((val,index,arr)=>{
+        val.melody = getMelodyIcon(val.melody)
+      })
+      that.setData({listData: res.data})
+      if(first)
+        wx.setStorageSync('melody', res.data)
+    }
+  })
+}
+
+const getMelodyIcon = (melody) => {
+  let list = []
+  for (let i in melody) {
+    let str = "/pages/static/pic/melody/" + melody[i] + picSuffix
+    list.push(str)
+  }
+  return list
+}
+
 module.exports = {
   getSkill: getSkill,
   getMap: getMap,
@@ -183,4 +208,5 @@ module.exports = {
   getSkillAbout: getSkillAbout,
   getCompetitive: getCompetitive,
   getCompetitiveReward: getCompetitiveReward,
+  getMelody: getMelody,
 }

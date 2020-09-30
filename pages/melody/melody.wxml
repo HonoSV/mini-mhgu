@@ -1,0 +1,23 @@
+<!--pages/melody/melody.wxml-->
+<view class="page">
+    <view class="table">
+        <view class="tr title">
+            <view class="th">乐谱</view>
+            <view class="thB">旋律效果</view>
+            <view class="thM">时间</view>
+        </view>
+        <view class="tr" wx:for="{{listData}}" wx:for-item="item" wx:key="key" data-againeffect="{{item.againEffect}}" data-againenhancetime="{{item.againEnhanceTime}}"
+            bindtap="openDialog">
+            <view class="td">
+                <image wx:for="{{item.melody}}" wx:for-item="item2" wx:key="key" class="catPic" src="{{item2}}"
+                    mode="widthFix" />
+            </view>
+            <view class="tdB">{{item.effect}}</view>
+            <view class="tdM">{{item.time}}</view>
+        </view>
+    </view>
+</view>
+
+<mp-dialog title="重奏效果(时间)" show="{{flag}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+    <view>{{again}}</view>
+</mp-dialog>

@@ -8,6 +8,7 @@
 .homeButton {
   margin-right: 25rpx;
   margin-left: 20rpx;
+  background-color: #dadada;
 }
 
 .buttonName {

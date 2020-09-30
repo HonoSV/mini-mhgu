@@ -32,7 +32,7 @@
 </view>
 
 <mp-dialog title="生产道具" show="{{flag}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
-  <view wx:for="{{materialList}}">
+  <view wx:for="{{materialList}}" wx:key="key">
     <view>{{item}}</view>
   </view>
 </mp-dialog>
