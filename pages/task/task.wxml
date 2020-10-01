@@ -1,0 +1,64 @@
+<!--pages/task/task.wxml-->
+
+<view class="page">
+  <view class="top">
+    <view>
+      <picker mode="selector" bindchange="bindPickerChange1" value="{{levelIndex}}" range="{{levelList}}">
+        <button style="width: 100%">
+          <view class="picker">
+            选择任务等级：{{levelList[levelIndex]}}
+          </view>
+        </button>
+      </picker>
+    </view>
+
+    <view class="top2">
+      <view class="type">
+        <picker mode="selector" bindchange="bindPickerChange2" value="{{typeIndex}}" range="{{typeList}}">
+          <button style="width: 100%">
+            <view class="picker">
+              选择类型：{{typeList[typeIndex]}}
+            </view>
+          </button>
+        </picker>
+      </view>
+      
+      <view class="switch">
+        <view class="swText">关键<mp-icon icon="star" color="green" size="{{15}}"></mp-icon>：</view>
+        <view class="sw">  <switch checked="{{isKey}}" bindchange="switchChange"/></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="end">
+    <view class="list" wx:for="{{listData}}" wx:key="key" bindtap="openDialog" data-map="{{item.gameMap}}" data-time="{{item.time}}" data-target="{{item.target}}" data-gold="{{item.gold}}" data-hrp="{{item.hrp}}" data-starget="{{item.subTarget}}" data-sgold="{{item.subGold}}" data-shrp="{{item.subHrp}}">
+      <view>
+        <image class="icon" wx:if="{{item.type==='采集'}}" src="../static/pic/task/cj.png" mode="widthFix" />
+        <image class="icon" wx:elif="{{item.type==='讨伐'}}" src="../static/pic/task/tf.png" mode="widthFix" />
+        <image class="icon" wx:elif="{{item.type==='狩猎'}}" src="../static/pic/task/sl.png" mode="widthFix" />
+        <image class="icon" wx:elif="{{item.type==='捕获'}}" src="../static/pic/task/bh.png" mode="widthFix" />
+        <image class="icon" wx:elif="{{item.type==='连续狩猎'}}" src="../static/pic/task/lx.png" mode="widthFix" />
+        <image class="icon" wx:else src="../static/pic/task/dlx.png" mode="widthFix" />
+      </view>
+      <view>
+        {{item.taskName}}
+      </view>
+      <view>
+        <image class="icon" wx:if="{{item.isCat}}" src="../static/pic/task/cat.png" mode="widthFix" />
+      </view>
+      <view>
+        <image class="icon" wx:if="{{item.isBubble}}" src="../static/pic/task/bubble.png" mode="widthFix" />
+      </view>
+      <view>
+        <mp-icon wx:if="{{item.isKey==='关键'}}" icon="star" color="green" size="{{15}}"></mp-icon>
+        <mp-icon wx:elif="{{item.isKey==='紧急'}}" icon="star" color="red" size="{{15}}"></mp-icon>
+      </view>
+    </view>
+  </view>
+
+
+</view>
+
+<mp-dialog title="任务详情" show="{{flag}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+    <view><text>{{text}}</text></view>
+</mp-dialog>

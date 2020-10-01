@@ -17,10 +17,15 @@
 }
 
 .buttonView {
-  margin-bottom: 20px;
+  margin-bottom: 20rpx;
 }
 
 .title {
-  margin-bottom: 50px;
+  margin-bottom: 100rpx;
   font-weight:bold;
+}
+
+.main {
+  margin-top: 50rpx;
+  margin-bottom: 100rpx;
 }

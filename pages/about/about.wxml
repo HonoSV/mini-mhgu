@@ -1,0 +1,19 @@
+<!--pages/about/about.wxml-->
+<view class="page">
+  <view class="top">
+    <mp-cells ext-class="my-cells" title="一起打猎" class="cell">
+            <mp-cell value="微信群： 微信 HonoSV" footer="复制" bindtap="copyWX"></mp-cell>
+            <mp-cell value="QQ群： 1127367123 " footer="复制" bindtap="copyQQ"></mp-cell>
+      </mp-cells>
+  </view>
+  <view class="txtEx">
+    <text class="txt">
+      本程序乃兴趣使然的产物，资料均由个人于互联网手工收集整理，难免有遗漏错误，若有发现欢迎加微信指出。
+      所有数据仅供学习交流，不作商用。
+      \n
+      当前版本： 1.0\n
+      更新日志：\n
+      1.0： 初版，提供技能、斗技大会、笛旋律、任务、怪物肉质、饰品、地图、调和的部分查询功能
+    </text>
+  </view>
+</view>

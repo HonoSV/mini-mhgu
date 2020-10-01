@@ -1,8 +1,6 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/index/index",
-    "pages/logs/logs",
     "pages/skill/skill",
     "pages/map/map",
     "pages/monster/monster",
@@ -10,7 +8,9 @@
     "pages/decorations/decorations",
     "pages/synthesis/synthesis",
     "pages/competitive/competitive",
-    "pages/melody/melody"
+    "pages/melody/melody",
+    "pages/task/task",
+    "pages/about/about"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -25,6 +25,9 @@
   },
   "usingComponents": {
     "mp-dialog": "/miniprogram_npm/weui-miniprogram/dialog/dialog",
-    "mp-searchbar": "/miniprogram_npm/weui-miniprogram/searchbar/searchbar"
+    "mp-searchbar": "/miniprogram_npm/weui-miniprogram/searchbar/searchbar",
+    "mp-icon": "/miniprogram_npm/weui-miniprogram/icon/icon",
+    "mp-cell": "/miniprogram_npm/weui-miniprogram/cell/cell",
+    "mp-cells": "/miniprogram_npm/weui-miniprogram/cells/cells"
   }
 }

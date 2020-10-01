@@ -1,0 +1,55 @@
+/* pages/task/task.wxss */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.top {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.end {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+.list {
+  font-size: smaller;
+  font-weight: 800;
+  padding: 40rpx;
+  border-top: 1px solid #dadada;
+  display: flex;
+flex-direction: row;
+}
+
+.top2 {
+  display: flex;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+  width: 100%;
+}
+.type {
+  display: flex;
+  width: 60%;
+  margin-left: 20rpx;
+}
+.switch {
+  display: flex;
+  width:40%;
+  justify-content: center;
+  align-items: center;
+}
+.swText {
+  display: flex;
+}
+.sw {
+  display: flex;
+}
+
+.icon {
+  width:30rpx;
+  height: 30rpx;
+}

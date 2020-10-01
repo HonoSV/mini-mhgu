@@ -198,6 +198,26 @@ const getMelodyIcon = (melody) => {
   return list
 }
 
+const getTask = (that, first, isKey, level, type) => {
+  if (!level)
+    level = ''
+  if (!type)
+    type = ''
+  wx.request({
+    url: URL+'/task',
+    data: {
+      'level': level,
+      'type': type,
+      'isKey': isKey
+    },
+    success(res) {
+      that.setData({listData: res.data})
+      if (first)
+        wx.setStorageSync('firstTask', res.data)
+    }
+  })
+}
+
 module.exports = {
   getSkill: getSkill,
   getMap: getMap,
@@ -209,4 +229,5 @@ module.exports = {
   getCompetitive: getCompetitive,
   getCompetitiveReward: getCompetitiveReward,
   getMelody: getMelody,
+  getTask: getTask,
 }
